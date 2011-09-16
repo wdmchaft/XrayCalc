@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  XrayCalc
 //
-//  Created by  on 20110915.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Created by Tim Robb on 20110915.
+//  Copyright (c) 2011 InvaderTim. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

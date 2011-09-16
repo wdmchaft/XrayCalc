@@ -15,6 +15,16 @@
 		6F25D2A414221A6B00D938E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25D2A314221A6B00D938E9 /* main.m */; };
 		6F25D2A814221A6B00D938E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25D2A714221A6B00D938E9 /* AppDelegate.m */; };
 		6F25D2AB14221A6B00D938E9 /* XrayCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F25D2A914221A6B00D938E9 /* XrayCalc.xcdatamodeld */; };
+		6F8F98911423507300D09D53 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F988F1423507300D09D53 /* MainViewController.m */; };
+		6F8F98921423507300D09D53 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F98901423507300D09D53 /* MainView.xib */; };
+		6F8F9897142351CE00D09D53 /* UICandySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F9896142351CE00D09D53 /* UICandySlider.m */; };
+		6F8F98A014235F6A00D09D53 /* CandyPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989914235F6A00D09D53 /* CandyPattern.png */; };
+		6F8F98A114235F6A00D09D53 /* CandySliderBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989A14235F6A00D09D53 /* CandySliderBalloon.png */; };
+		6F8F98A214235F6A00D09D53 /* CandySliderGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989B14235F6A00D09D53 /* CandySliderGradient.png */; };
+		6F8F98A314235F6A00D09D53 /* CandySliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989C14235F6A00D09D53 /* CandySliderThumb.png */; };
+		6F8F98A414235F6A00D09D53 /* CandySliderThumbImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989D14235F6A00D09D53 /* CandySliderThumbImage.png */; };
+		6F8F98A514235F6A00D09D53 /* NavigationGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989E14235F6A00D09D53 /* NavigationGradient.png */; };
+		6F8F98A614235F6A00D09D53 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989F14235F6A00D09D53 /* noise.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +33,25 @@
 		6F25D29714221A6B00D938E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6F25D29914221A6B00D938E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F25D29B14221A6B00D938E9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6F25D29F14221A6B00D938E9 /* XrayCalc-Info.plist */ = {isa = PBXFileReference; path = "XrayCalc-Info.plist"; sourceTree = "<group>"; };
+		6F25D29F14221A6B00D938E9 /* XrayCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XrayCalc-Info.plist"; sourceTree = "<group>"; };
 		6F25D2A114221A6B00D938E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6F25D2A314221A6B00D938E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6F25D2A514221A6B00D938E9 /* XrayCalc-Prefix.pch */ = {isa = PBXFileReference; path = "XrayCalc-Prefix.pch"; sourceTree = "<group>"; };
-		6F25D2A614221A6B00D938E9 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		6F25D2A514221A6B00D938E9 /* XrayCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XrayCalc-Prefix.pch"; sourceTree = "<group>"; };
+		6F25D2A614221A6B00D938E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6F25D2A714221A6B00D938E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6F25D2AA14221A6B00D938E9 /* XrayCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XrayCalc.xcdatamodel; sourceTree = "<group>"; };
+		6F8F988E1423507300D09D53 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6F8F988F1423507300D09D53 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6F8F98901423507300D09D53 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		6F8F9895142351CE00D09D53 /* UICandySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICandySlider.h; sourceTree = "<group>"; };
+		6F8F9896142351CE00D09D53 /* UICandySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICandySlider.m; sourceTree = "<group>"; };
+		6F8F989914235F6A00D09D53 /* CandyPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandyPattern.png; sourceTree = "<group>"; };
+		6F8F989A14235F6A00D09D53 /* CandySliderBalloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandySliderBalloon.png; sourceTree = "<group>"; };
+		6F8F989B14235F6A00D09D53 /* CandySliderGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandySliderGradient.png; sourceTree = "<group>"; };
+		6F8F989C14235F6A00D09D53 /* CandySliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandySliderThumb.png; sourceTree = "<group>"; };
+		6F8F989D14235F6A00D09D53 /* CandySliderThumbImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandySliderThumbImage.png; sourceTree = "<group>"; };
+		6F8F989E14235F6A00D09D53 /* NavigationGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationGradient.png; sourceTree = "<group>"; };
+		6F8F989F14235F6A00D09D53 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +72,9 @@
 		6F25D28614221A6A00D938E9 = {
 			isa = PBXGroup;
 			children = (
-				6F25D29D14221A6B00D938E9 /* XrayCalc */,
+				6F25D29D14221A6B00D938E9 /* Classes */,
+				6F25D2B114221B9100D938E9 /* Resources */,
+				6F25D29E14221A6B00D938E9 /* Supporting Files */,
 				6F25D29414221A6B00D938E9 /* Frameworks */,
 				6F25D29214221A6B00D938E9 /* Products */,
 			);
@@ -75,26 +99,119 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6F25D29D14221A6B00D938E9 /* XrayCalc */ = {
+		6F25D29D14221A6B00D938E9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6F25D2A614221A6B00D938E9 /* AppDelegate.h */,
-				6F25D2A714221A6B00D938E9 /* AppDelegate.m */,
-				6F25D2A914221A6B00D938E9 /* XrayCalc.xcdatamodeld */,
-				6F25D29E14221A6B00D938E9 /* Supporting Files */,
+				6F25D2B914221CFD00D938E9 /* Views */,
+				6F25D2B714221CE400D938E9 /* Data */,
 			);
-			path = XrayCalc;
+			name = Classes;
+			path = XrayCalc/Classes;
 			sourceTree = "<group>";
 		};
 		6F25D29E14221A6B00D938E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6F25D29F14221A6B00D938E9 /* XrayCalc-Info.plist */,
-				6F25D2A014221A6B00D938E9 /* InfoPlist.strings */,
 				6F25D2A314221A6B00D938E9 /* main.m */,
 				6F25D2A514221A6B00D938E9 /* XrayCalc-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = XrayCalc;
+			sourceTree = "<group>";
+		};
+		6F25D2B114221B9100D938E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F989814235F5000D09D53 /* Artwork */,
+				6F25D2A614221A6B00D938E9 /* AppDelegate.h */,
+				6F25D2A714221A6B00D938E9 /* AppDelegate.m */,
+				6F25D29F14221A6B00D938E9 /* XrayCalc-Info.plist */,
+				6F25D2A014221A6B00D938E9 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			path = XrayCalc;
+			sourceTree = "<group>";
+		};
+		6F25D2B714221CE400D938E9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6F25D2B814221CF000D938E9 /* Entities */,
+				6F25D2A914221A6B00D938E9 /* XrayCalc.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		6F25D2B814221CF000D938E9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		6F25D2B914221CFD00D938E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F9893142350A600D09D53 /* Custom Elements */,
+				6F8F988D14234DD700D09D53 /* Information */,
+				6F8F988C14234DD100D09D53 /* Settings */,
+				6F8F988B14234DC800D09D53 /* Main */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6F8F988B14234DC800D09D53 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F988E1423507300D09D53 /* MainViewController.h */,
+				6F8F988F1423507300D09D53 /* MainViewController.m */,
+				6F8F98901423507300D09D53 /* MainView.xib */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6F8F988C14234DD100D09D53 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		6F8F988D14234DD700D09D53 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Information;
+			sourceTree = "<group>";
+		};
+		6F8F9893142350A600D09D53 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F9894142350B000D09D53 /* UICandySlider */,
+			);
+			path = "Custom Elements";
+			sourceTree = "<group>";
+		};
+		6F8F9894142350B000D09D53 /* UICandySlider */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F9895142351CE00D09D53 /* UICandySlider.h */,
+				6F8F9896142351CE00D09D53 /* UICandySlider.m */,
+			);
+			name = UICandySlider;
+			sourceTree = "<group>";
+		};
+		6F8F989814235F5000D09D53 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F989914235F6A00D09D53 /* CandyPattern.png */,
+				6F8F989A14235F6A00D09D53 /* CandySliderBalloon.png */,
+				6F8F989B14235F6A00D09D53 /* CandySliderGradient.png */,
+				6F8F989C14235F6A00D09D53 /* CandySliderThumb.png */,
+				6F8F989D14235F6A00D09D53 /* CandySliderThumbImage.png */,
+				6F8F989E14235F6A00D09D53 /* NavigationGradient.png */,
+				6F8F989F14235F6A00D09D53 /* noise.png */,
+			);
+			path = Artwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F25D2A214221A6B00D938E9 /* InfoPlist.strings in Resources */,
+				6F8F98921423507300D09D53 /* MainView.xib in Resources */,
+				6F8F98A014235F6A00D09D53 /* CandyPattern.png in Resources */,
+				6F8F98A114235F6A00D09D53 /* CandySliderBalloon.png in Resources */,
+				6F8F98A214235F6A00D09D53 /* CandySliderGradient.png in Resources */,
+				6F8F98A314235F6A00D09D53 /* CandySliderThumb.png in Resources */,
+				6F8F98A414235F6A00D09D53 /* CandySliderThumbImage.png in Resources */,
+				6F8F98A514235F6A00D09D53 /* NavigationGradient.png in Resources */,
+				6F8F98A614235F6A00D09D53 /* noise.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +286,8 @@
 				6F25D2A414221A6B00D938E9 /* main.m in Sources */,
 				6F25D2A814221A6B00D938E9 /* AppDelegate.m in Sources */,
 				6F25D2AB14221A6B00D938E9 /* XrayCalc.xcdatamodeld in Sources */,
+				6F8F98911423507300D09D53 /* MainViewController.m in Sources */,
+				6F8F9897142351CE00D09D53 /* UICandySlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +353,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XrayCalc/XrayCalc-Prefix.pch";
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -237,7 +367,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XrayCalc/XrayCalc-Prefix.pch";
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -262,6 +395,7 @@
 				6F25D2B014221A6B00D938E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

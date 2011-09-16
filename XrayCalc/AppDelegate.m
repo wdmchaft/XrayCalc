@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  XrayCalc
 //
-//  Created by  on 20110915.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Created by Tim Robb on 20110915.
+//  Copyright (c) 2011 InvaderTim. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -29,6 +30,8 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:[NSBundle mainBundle]];
+    [self.window addSubview:mainViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
