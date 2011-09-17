@@ -11,22 +11,22 @@
 @class UICandySlider;
 
 @protocol NSCandySliderDelegate <NSObject>
-
--(void)sliderChanged:(UICandySlider*)slider;
-
+-(void)sliderChanged:(UICandySlider*)slider value:(int)value;
 @end
 
-@interface UICandySlider : UIView {
-    UISlider *slider;
+@interface UICandySlider : UISlider {
     UILabel *output;
+    UIImageView *minTrackView;
+    UIImageView *maxTrackView;
     
     id<NSCandySliderDelegate> delegate;
     
     NSString *suffix;
     NSInteger multipler;
 }
-@property (nonatomic,retain) UISlider *slider;
 @property (nonatomic,retain) UILabel *output;
+@property (nonatomic,retain) UIImageView *minTrackView;
+@property (nonatomic,retain) UIImageView *maxTrackView;
 
 @property (nonatomic,retain) id<NSCandySliderDelegate> delegate;
 
@@ -34,6 +34,6 @@
 @property (nonatomic,assign) NSInteger multipler;
 
 -(UICandySlider*)initWithFrame:(CGRect)frame balloonSuffix:(NSString*)suffix andMultiplier:(int)multipler;
--(void)changed:(id)sender;
+-(void)changed:(float)value;
 
 @end
