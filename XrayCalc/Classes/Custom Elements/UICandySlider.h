@@ -8,32 +8,43 @@
 
 #import <UIKit/UIKit.h>
 
-@class UICandySlider;
+enum {
+    kCandySliderTypeDensity = 0,
+    kCandySliderTypeThickness = 1
+};
 
-@protocol NSCandySliderDelegate <NSObject>
--(void)sliderChanged:(UICandySlider*)slider value:(int)value;
-@end
+@class UICandySlider;
 
 @interface UICandySlider : UISlider {
     UILabel *output;
+    UILabel *descriptionLeft;
+    UILabel *descriptionRight;
+    
     UIImageView *minTrackView;
     UIImageView *maxTrackView;
-    
-    id<NSCandySliderDelegate> delegate;
-    
+        
     NSString *suffix;
     NSInteger multipler;
+    
+    NSInteger sliderType;
+    
+    BOOL shouldAnimateDescriptions;
 }
 @property (nonatomic,retain) UILabel *output;
+@property (nonatomic,retain) UILabel *descriptionLeft;
+@property (nonatomic,retain) UILabel *descriptionRight;
+
 @property (nonatomic,retain) UIImageView *minTrackView;
 @property (nonatomic,retain) UIImageView *maxTrackView;
-
-@property (nonatomic,retain) id<NSCandySliderDelegate> delegate;
 
 @property (nonatomic,retain) NSString *suffix;
 @property (nonatomic,assign) NSInteger multipler;
 
--(UICandySlider*)initWithFrame:(CGRect)frame balloonSuffix:(NSString*)suffix andMultiplier:(int)multipler;
+@property (nonatomic,assign) NSInteger sliderType;
+
+@property (nonatomic,assign) BOOL shouldAnimateDescriptions;
+
+-(UICandySlider*)initWithFrame:(CGRect)frame type:(NSInteger)type;
 -(void)changed:(float)value;
 
 @end

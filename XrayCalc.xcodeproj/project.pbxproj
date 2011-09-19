@@ -17,8 +17,21 @@
 		6F25D2AB14221A6B00D938E9 /* XrayCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F25D2A914221A6B00D938E9 /* XrayCalc.xcdatamodeld */; };
 		6F53548814245B230079CB86 /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F53548714245B230079CB86 /* NavigationBar.png */; };
 		6F53548A142468300079CB86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F535489142468300079CB86 /* QuartzCore.framework */; };
+		6F53548E1424C87E0079CB86 /* UINavigationBlueBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F53548D1424C87E0079CB86 /* UINavigationBlueBar.m */; };
+		6F5354901424CDB50079CB86 /* UINavigationBlueBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F53548F1424CDB50079CB86 /* UINavigationBlueBar.xib */; };
+		6F7C058214275D2B007FA7A8 /* BlankButtonSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057A14275D2B007FA7A8 /* BlankButtonSmall.png */; };
+		6F7C058314275D2B007FA7A8 /* BlankButtonSmallPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057B14275D2B007FA7A8 /* BlankButtonSmallPressed.png */; };
+		6F7C058414275D2B007FA7A8 /* BlankButtonWidePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057C14275D2B007FA7A8 /* BlankButtonWidePressed.png */; };
+		6F7C058514275D2B007FA7A8 /* InformationButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057D14275D2B007FA7A8 /* InformationButton.png */; };
+		6F7C058614275D2B007FA7A8 /* InformationButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057E14275D2B007FA7A8 /* InformationButtonPressed.png */; };
+		6F7C058714275D2B007FA7A8 /* NavigationBackPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C057F14275D2B007FA7A8 /* NavigationBackPressed.png */; };
+		6F7C058814275D2B007FA7A8 /* SettingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C058014275D2B007FA7A8 /* SettingsButton.png */; };
+		6F7C058914275D2B007FA7A8 /* SettingsButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C058114275D2B007FA7A8 /* SettingsButtonPressed.png */; };
+		6F7C059114276A6E007FA7A8 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C059014276A6E007FA7A8 /* InformationViewController.m */; };
+		6F7C059414276D38007FA7A8 /* MachineListControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C059314276D38007FA7A8 /* MachineListControlView.m */; };
+		6F8A3AD4142613800082C846 /* NavigationBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3AD2142613800082C846 /* NavigationBack.png */; };
+		6F8A3AD5142613800082C846 /* BlankButtonWide.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3AD3142613800082C846 /* BlankButtonWide.png */; };
 		6F8F98911423507300D09D53 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F988F1423507300D09D53 /* MainViewController.m */; };
-		6F8F98921423507300D09D53 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F98901423507300D09D53 /* MainView.xib */; };
 		6F8F9897142351CE00D09D53 /* UICandySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F9896142351CE00D09D53 /* UICandySlider.m */; };
 		6F8F98A014235F6A00D09D53 /* CandyPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989914235F6A00D09D53 /* CandyPattern.png */; };
 		6F8F98A114235F6A00D09D53 /* CandySliderBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F989A14235F6A00D09D53 /* CandySliderBalloon.png */; };
@@ -47,9 +60,25 @@
 		6F25D2AA14221A6B00D938E9 /* XrayCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XrayCalc.xcdatamodel; sourceTree = "<group>"; };
 		6F53548714245B230079CB86 /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
 		6F535489142468300079CB86 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6F53548C1424C87E0079CB86 /* UINavigationBlueBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationBlueBar.h; sourceTree = "<group>"; };
+		6F53548D1424C87E0079CB86 /* UINavigationBlueBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationBlueBar.m; sourceTree = "<group>"; };
+		6F53548F1424CDB50079CB86 /* UINavigationBlueBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UINavigationBlueBar.xib; sourceTree = "<group>"; };
+		6F7C057A14275D2B007FA7A8 /* BlankButtonSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankButtonSmall.png; sourceTree = "<group>"; };
+		6F7C057B14275D2B007FA7A8 /* BlankButtonSmallPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankButtonSmallPressed.png; sourceTree = "<group>"; };
+		6F7C057C14275D2B007FA7A8 /* BlankButtonWidePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankButtonWidePressed.png; sourceTree = "<group>"; };
+		6F7C057D14275D2B007FA7A8 /* InformationButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InformationButton.png; sourceTree = "<group>"; };
+		6F7C057E14275D2B007FA7A8 /* InformationButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InformationButtonPressed.png; sourceTree = "<group>"; };
+		6F7C057F14275D2B007FA7A8 /* NavigationBackPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBackPressed.png; sourceTree = "<group>"; };
+		6F7C058014275D2B007FA7A8 /* SettingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsButton.png; sourceTree = "<group>"; };
+		6F7C058114275D2B007FA7A8 /* SettingsButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsButtonPressed.png; sourceTree = "<group>"; };
+		6F7C058F14276A6E007FA7A8 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		6F7C059014276A6E007FA7A8 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		6F7C059214276D38007FA7A8 /* MachineListControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineListControlView.h; sourceTree = "<group>"; };
+		6F7C059314276D38007FA7A8 /* MachineListControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineListControlView.m; sourceTree = "<group>"; };
+		6F8A3AD2142613800082C846 /* NavigationBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBack.png; sourceTree = "<group>"; };
+		6F8A3AD3142613800082C846 /* BlankButtonWide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankButtonWide.png; sourceTree = "<group>"; };
 		6F8F988E1423507300D09D53 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6F8F988F1423507300D09D53 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		6F8F98901423507300D09D53 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		6F8F9895142351CE00D09D53 /* UICandySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICandySlider.h; sourceTree = "<group>"; };
 		6F8F9896142351CE00D09D53 /* UICandySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICandySlider.m; sourceTree = "<group>"; };
 		6F8F989914235F6A00D09D53 /* CandyPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandyPattern.png; sourceTree = "<group>"; };
@@ -174,12 +203,39 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		6F53548B1424C8220079CB86 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6F53548C1424C87E0079CB86 /* UINavigationBlueBar.h */,
+				6F53548D1424C87E0079CB86 /* UINavigationBlueBar.m */,
+				6F53548F1424CDB50079CB86 /* UINavigationBlueBar.xib */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		6F8A3AD0142600DA0082C846 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6F7C057A14275D2B007FA7A8 /* BlankButtonSmall.png */,
+				6F7C057B14275D2B007FA7A8 /* BlankButtonSmallPressed.png */,
+				6F8A3AD3142613800082C846 /* BlankButtonWide.png */,
+				6F7C057C14275D2B007FA7A8 /* BlankButtonWidePressed.png */,
+				6F7C057D14275D2B007FA7A8 /* InformationButton.png */,
+				6F7C057E14275D2B007FA7A8 /* InformationButtonPressed.png */,
+				6F7C058014275D2B007FA7A8 /* SettingsButton.png */,
+				6F7C058114275D2B007FA7A8 /* SettingsButtonPressed.png */,
+				6F8A3AD2142613800082C846 /* NavigationBack.png */,
+				6F7C057F14275D2B007FA7A8 /* NavigationBackPressed.png */,
+				6F53548714245B230079CB86 /* NavigationBar.png */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		6F8F988B14234DC800D09D53 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6F8F988E1423507300D09D53 /* MainViewController.h */,
 				6F8F988F1423507300D09D53 /* MainViewController.m */,
-				6F8F98901423507300D09D53 /* MainView.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -187,6 +243,8 @@
 		6F8F988C14234DD100D09D53 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				6F7C059214276D38007FA7A8 /* MachineListControlView.h */,
+				6F7C059314276D38007FA7A8 /* MachineListControlView.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -194,6 +252,8 @@
 		6F8F988D14234DD700D09D53 /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				6F7C058F14276A6E007FA7A8 /* InformationViewController.h */,
+				6F7C059014276A6E007FA7A8 /* InformationViewController.m */,
 			);
 			name = Information;
 			sourceTree = "<group>";
@@ -201,6 +261,7 @@
 		6F8F9893142350A600D09D53 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				6F53548B1424C8220079CB86 /* Navigation */,
 				6F8F9894142350B000D09D53 /* UICandySlider */,
 			);
 			path = "Custom Elements";
@@ -218,10 +279,10 @@
 		6F8F989814235F5000D09D53 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
+				6F8A3AD0142600DA0082C846 /* Navigation */,
 				6F8F98BA14244EDD00D09D53 /* UICandySlider */,
 				6F8F98C11424577100D09D53 /* StandardIcon.png */,
 				6F8F98BF1424576B00D09D53 /* RetinaIcon.png */,
-				6F53548714245B230079CB86 /* NavigationBar.png */,
 				6F8F989F14235F6A00D09D53 /* noise.png */,
 				6F8F98B6142392A100D09D53 /* noise_retina.png */,
 			);
@@ -301,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F25D2A214221A6B00D938E9 /* InfoPlist.strings in Resources */,
-				6F8F98921423507300D09D53 /* MainView.xib in Resources */,
 				6F8F98A014235F6A00D09D53 /* CandyPattern.png in Resources */,
 				6F8F98A114235F6A00D09D53 /* CandySliderBalloon.png in Resources */,
 				6F8F98A214235F6A00D09D53 /* CandySliderGradient.png in Resources */,
@@ -312,6 +372,17 @@
 				6F8F98C01424576B00D09D53 /* RetinaIcon.png in Resources */,
 				6F8F98C21424577100D09D53 /* StandardIcon.png in Resources */,
 				6F53548814245B230079CB86 /* NavigationBar.png in Resources */,
+				6F5354901424CDB50079CB86 /* UINavigationBlueBar.xib in Resources */,
+				6F8A3AD4142613800082C846 /* NavigationBack.png in Resources */,
+				6F8A3AD5142613800082C846 /* BlankButtonWide.png in Resources */,
+				6F7C058214275D2B007FA7A8 /* BlankButtonSmall.png in Resources */,
+				6F7C058314275D2B007FA7A8 /* BlankButtonSmallPressed.png in Resources */,
+				6F7C058414275D2B007FA7A8 /* BlankButtonWidePressed.png in Resources */,
+				6F7C058514275D2B007FA7A8 /* InformationButton.png in Resources */,
+				6F7C058614275D2B007FA7A8 /* InformationButtonPressed.png in Resources */,
+				6F7C058714275D2B007FA7A8 /* NavigationBackPressed.png in Resources */,
+				6F7C058814275D2B007FA7A8 /* SettingsButton.png in Resources */,
+				6F7C058914275D2B007FA7A8 /* SettingsButtonPressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +399,9 @@
 				6F8F98911423507300D09D53 /* MainViewController.m in Sources */,
 				6F8F9897142351CE00D09D53 /* UICandySlider.m in Sources */,
 				6F8F98AF14238F5F00D09D53 /* Core.m in Sources */,
+				6F53548E1424C87E0079CB86 /* UINavigationBlueBar.m in Sources */,
+				6F7C059114276A6E007FA7A8 /* InformationViewController.m in Sources */,
+				6F7C059414276D38007FA7A8 /* MachineListControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +465,7 @@
 		6F25D2AF14221A6B00D938E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XrayCalc/XrayCalc-Prefix.pch";
 				GCC_WARN_UNUSED_VALUE = NO;
@@ -398,6 +473,7 @@
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,6 +481,7 @@
 		6F25D2B014221A6B00D938E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XrayCalc/XrayCalc-Prefix.pch";
 				GCC_WARN_UNUSED_VALUE = NO;
@@ -412,6 +489,7 @@
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
