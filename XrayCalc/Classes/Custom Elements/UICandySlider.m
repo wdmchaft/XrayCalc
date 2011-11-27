@@ -26,12 +26,25 @@
 
 @synthesize shouldAnimateDescriptions;
 
+-(void)dealloc {
+    [output release];
+    [suffix release];
+    
+    [descriptionLeft release];
+    [descriptionRight release];
+    
+    [minTrackView release];
+    [maxTrackView release];
+    
+    [super dealloc];
+}
+
 -(UICandySlider*)initWithFrame:(CGRect)frame type:(NSInteger)type {
     self.sliderType = type;
     if(self.sliderType == kCandySliderTypeDensity) {
         self.suffix = @"%";
         self.multipler = 100;
-    } else {
+    } else if(self.sliderType == kCandySliderTypeThickness) {
         self.suffix = @"cm";
         self.multipler = 1;
     }
@@ -54,7 +67,6 @@
     self.maxTrackView.layer.cornerRadius = 2.5f;
     self.maxTrackView.layer.masksToBounds = YES;
     [self addSubview:self.maxTrackView];
-    [self.maxTrackView release];
     
     self.minTrackView = [[UIImageView alloc] initWithFrame:[self trackRectForBounds:self.bounds]];
     [self.minTrackView setBackgroundColor:[UIColor colorWithPatternImage:maxTrack]];
@@ -64,7 +76,6 @@
     self.minTrackView.layer.cornerRadius = 2.5f;
     self.minTrackView.layer.masksToBounds = YES;
     [self addSubview:self.minTrackView];
-    [self.minTrackView release];
         
     [self setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
     [self setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
@@ -84,7 +95,7 @@
         self.descriptionLeft.font = [UIFont systemFontOfSize:12.0f];
         self.descriptionLeft.textColor = [UIColor whiteColor];
         self.descriptionLeft.backgroundColor = [UIColor clearColor];
-        self.descriptionLeft.text = @"Bone";
+        self.descriptionLeft.text = CURRENT_MACHINE.densityLeftTitle;
         [self addSubview:self.descriptionLeft];
         [self sendSubviewToBack:self.descriptionLeft];
         [self.descriptionLeft release];
@@ -93,7 +104,7 @@
         self.descriptionRight.font = [UIFont systemFontOfSize:12.0f];
         self.descriptionRight.textColor = [UIColor whiteColor];
         self.descriptionRight.backgroundColor = [UIColor clearColor];
-        self.descriptionRight.text = @"Lung";
+        self.descriptionRight.text = CURRENT_MACHINE.densityRightTitle;
         [self addSubview:self.descriptionRight];
         [self sendSubviewToBack:self.descriptionRight];
         [self.descriptionRight release];
@@ -104,6 +115,19 @@
 
 -(void)changed:(float)value {
     self.output.text = [NSString stringWithFormat:@"%.0f%@",value*self.multipler,self.suffix];
+    switch (self.sliderType) {
+        case kCandySliderTypeThickness:
+            CURRENT_MACHINE.thicknessValue = [NSNumber numberWithFloat:value];
+            break;
+            
+        case kCandySliderTypeDensity:
+            CURRENT_MACHINE.densityValue = [NSNumber numberWithFloat:value];
+            break;
+            
+        default:
+            break;
+    }
+    Recalculate;
 }
 
 -(void)setValue:(float)value {
@@ -202,13 +226,6 @@
     }
     
     return CGRectMake(newX-(62.0f/6), bounds.size.height-(38.0f), 62.0f/3, 88.0f/3);
-}
-
--(void)dealloc {
-    [output release];
-    [suffix release];
-    
-    [super dealloc];
 }
 
 @end

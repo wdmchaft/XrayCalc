@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MachineListControlView : UIViewController {
+@interface MachineListControlView : UIViewController <UITableViewDataSource,UITableViewDelegate> {
+    UITableView *table;
+    NSMutableArray *machineList;
     
+    BOOL hidesToolbar;
 }
+@property (nonatomic,retain) UITableView *table;
+@property (nonatomic,retain) NSMutableArray *machineList;
+@property (nonatomic,assign) BOOL hidesToolbar;
 
 @end

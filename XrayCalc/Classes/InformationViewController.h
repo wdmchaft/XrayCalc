@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface InformationViewController : UIViewController {
+    UITextView *aboutXrayCalc;
     
 }
+
+@property (nonatomic,retain) UITextView *aboutXrayCalc;
 
 @end

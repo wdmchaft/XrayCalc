@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 enum {
-    kCandySliderTypeDensity = 0,
-    kCandySliderTypeThickness = 1
+    kCandySliderTypeCustom = 0,
+    kCandySliderTypeDensity = 1,
+    kCandySliderTypeThickness = 2
 };
 
 @class UICandySlider;

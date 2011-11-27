@@ -6,7 +6,11 @@
 //  Copyright (c) 2011 InvaderTim. All rights reserved.
 //
 
-#import "UINavigationBlueBar.h"
+@interface UINavigationBlueBar : UINavigationBar
+
+-(void)drawRect:(CGRect)rect;
+
+@end
 
 @implementation UINavigationBlueBar
 
