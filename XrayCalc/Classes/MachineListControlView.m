@@ -43,6 +43,38 @@
     self.table.delegate = self;
     [self.view addSubview:self.table];
     
+    // load image
+    UIImage *plusButton = [UIImage imageNamed:@"BlankButtonWide.png"];
+    // set up button
+    UIButton *button = [[UIButton alloc] init];
+    button.frame = CGRectMake(0, 0, 61, 30);
+    [button addTarget:self action:@selector(pushNew) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundImage:plusButton forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"BlankButtonWidePressed.png"] forState:UIControlEventTouchDown];
+    [button setTitle:@"Add" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+    UIBarButtonItem *addButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+    
+    // load image
+    UIImage *deleteButton = [UIImage imageNamed:@"Delete.png"];
+    // set up button
+    UIButton *delete = [[UIButton alloc] init];
+    delete.frame = CGRectMake(0, 0, 61, 30);
+    [delete addTarget:self action:@selector(pushNew) forControlEvents:UIControlEventTouchUpInside];
+    [delete setBackgroundImage:deleteButton forState:UIControlStateNormal];
+    [delete setBackgroundImage:[UIImage imageNamed:@"DeletePressed.png"] forState:UIControlEventTouchDown];
+    [delete setTitle:@"Delete" forState:UIControlStateNormal];
+    delete.titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+    UIBarButtonItem *deleteButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:delete] autorelease];
+    
+    
+    UIBarButtonItem	*flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    NSArray *array = [NSArray arrayWithObjects:addButtonItem,flex,deleteButtonItem,nil];
+    [self setToolbarItems:array animated:NO];    
+    
+    
+    
     self.machineList = [[[Core getInstance] getMachineArray] mutableCopy];
 }
 

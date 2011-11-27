@@ -74,6 +74,8 @@ static Machine *currentMachine;
         machine.densityLeftTitle = @"Bone";
         machine.densityRightTitle = @"Lung";
         machine.densityInitial = [NSNumber numberWithFloat:0.5];
+        machine.densityMinimum = [NSNumber numberWithInt:0];
+        machine.densityMaximum = [NSNumber numberWithInt:100];
         
         machine.outputType = [NSNumber numberWithInt:kSettingTypeS];
         machine.leftSetting = [NSNumber numberWithInt:kSettingTypeKV];

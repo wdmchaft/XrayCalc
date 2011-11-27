@@ -70,6 +70,9 @@
 		6F9AAD0C1428322B006FC670 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AAD0B1428322B006FC670 /* Grid.m */; };
 		6F9AAD0F1428322B006FC670 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AAD0E1428322B006FC670 /* Setting.m */; };
 		6F9AAD12142832F8006FC670 /* Machine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AAD11142832F8006FC670 /* Machine.m */; };
+		9084BD811481F278005442AE /* ThicknessDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084BD801481F278005442AE /* ThicknessDetailView.m */; };
+		9084BD841481F2B5005442AE /* cellBackgroundReversed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084BD821481F2B5005442AE /* cellBackgroundReversed.png */; };
+		9084BD851481F2B5005442AE /* cellButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084BD831481F2B5005442AE /* cellButtonBackground.png */; };
 		90A646D4146A958300896FC3 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646CD146A94A400896FC3 /* libRestKitCoreData.a */; };
 		90A646D5146A958300896FC3 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646C9146A94A400896FC3 /* libRestKitJSONParserJSONKit.a */; };
 		90A646D6146A958300896FC3 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646BD146A94A400896FC3 /* libRestKitNetwork.a */; };
@@ -257,6 +260,10 @@
 		6F9AAD10142832F8006FC670 /* Machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Machine.h; sourceTree = "<group>"; };
 		6F9AAD11142832F8006FC670 /* Machine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Machine.m; sourceTree = "<group>"; };
 		6F9AAD2214284DEB006FC670 /* Entities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entities.h; sourceTree = "<group>"; };
+		9084BD7F1481F278005442AE /* ThicknessDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThicknessDetailView.h; sourceTree = "<group>"; };
+		9084BD801481F278005442AE /* ThicknessDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThicknessDetailView.m; sourceTree = "<group>"; };
+		9084BD821481F2B5005442AE /* cellBackgroundReversed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellBackgroundReversed.png; path = UITableView/cellBackgroundReversed.png; sourceTree = "<group>"; };
+		9084BD831481F2B5005442AE /* cellButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellButtonBackground.png; path = UITableView/cellButtonBackground.png; sourceTree = "<group>"; };
 		90A646A8146A94A400896FC3 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		90A646DA146A95A300896FC3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90A646DC146A95C000896FC3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -440,6 +447,8 @@
 		6F86D8FE142EEBAC005F09CA /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				9084BD821481F2B5005442AE /* cellBackgroundReversed.png */,
+				9084BD831481F2B5005442AE /* cellButtonBackground.png */,
 				6F4E0DD41430794A00FB9307 /* GroupedCellBackground.png */,
 				6F86D905142EF134005F09CA /* ListCellGradient.png */,
 				6F86D906142EF134005F09CA /* DisclosureButton.png */,
@@ -511,6 +520,7 @@
 		6F8F988C14234DD100D09D53 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9084BD7E1481F250005442AE /* Thickness */,
 				6F86D91D14306FB1005F09CA /* Density */,
 				6F86D91C14306FAA005F09CA /* Plates */,
 				6F86D91B14306F96005F09CA /* Grids */,
@@ -593,6 +603,15 @@
 				6F8F989D14235F6A00D09D53 /* CandySliderThumbImage.png */,
 			);
 			path = UICandySlider;
+			sourceTree = "<group>";
+		};
+		9084BD7E1481F250005442AE /* Thickness */ = {
+			isa = PBXGroup;
+			children = (
+				9084BD7F1481F278005442AE /* ThicknessDetailView.h */,
+				9084BD801481F278005442AE /* ThicknessDetailView.m */,
+			);
+			name = Thickness;
 			sourceTree = "<group>";
 		};
 		90A646A9146A94A400896FC3 /* Products */ = {
@@ -788,6 +807,8 @@
 				6F4E0DD51430794A00FB9307 /* GroupedCellBackground.png in Resources */,
 				6F4E0DD81430795E00FB9307 /* AboutBubble.png in Resources */,
 				90F60E27145765F4003B5992 /* Entitlements.plist in Resources */,
+				9084BD841481F2B5005442AE /* cellBackgroundReversed.png in Resources */,
+				9084BD851481F2B5005442AE /* cellButtonBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +841,7 @@
 				6F86D92B14306FEF005F09CA /* GridDetailView.m in Sources */,
 				6F86D92C14306FEF005F09CA /* GridListControlView.m in Sources */,
 				90A646E4146A971D00896FC3 /* CoreNetwork.m in Sources */,
+				9084BD811481F278005442AE /* ThicknessDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

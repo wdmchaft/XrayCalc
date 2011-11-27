@@ -1,14 +1,15 @@
 //
-//  DensityDetailView.m
+//  ThicknessDetailView.m
 //  XrayCalc
 //
-//  Created by Courtzie on 26/09/11.
-//  Copyright (c) 2011 InvaderTim. All rights reserved.
+//  Created by MiniServe on 26/09/11.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DensityDetailView.h"
+#import "ThicknessDetailView.h"
 
-@implementation DensityDetailView
+@implementation ThicknessDetailView
+
 @synthesize minLabel;
 @synthesize maxLabel;
 @synthesize initialLabel;
@@ -31,14 +32,13 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-
-    self.tableView = [[UITableView alloc] initWithFrame:
-    self.tableView.frame style:UITableViewStyleGrouped];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.tableView.frame style:UITableViewStyleGrouped];
     self.view.backgroundColor = BACKGROUND_COLOUR;
     
     shouldSave = NO;
     
-    self.title = @"Density";
+    self.title = @"Thickness";
     
     // load image
     UIImage *saveButton = [UIImage imageNamed:@"BlankButtonWide.png"];
@@ -52,19 +52,19 @@
     button.titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     self.navigationItem.rightBarButtonItem =[[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
     [button release];
-   
+    
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     if (shouldSave) {
-        CURRENT_MACHINE.densityInitial = [NSNumber numberWithInt:[self.initialLabel.text intValue]];
-        CURRENT_MACHINE.densityMaximum = [NSNumber numberWithInt:[self.maxLabel.text intValue]];
-        CURRENT_MACHINE.densityMinimum = [NSNumber numberWithInt:[self.minLabel.text intValue]];
+        CURRENT_MACHINE.thicknessInitial = [NSNumber numberWithInt:[self.initialLabel.text intValue]];
+        CURRENT_MACHINE.thicknessMin = [NSNumber numberWithInt:[self.maxLabel.text intValue]];
+        CURRENT_MACHINE.thicknessMax = [NSNumber numberWithInt:[self.minLabel.text intValue]];
         [[Core getInstance] saveContext];
     } else {
         [[Core getInstance].managedObjectContext rollback];
     }
-  }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
@@ -101,26 +101,26 @@
     textField.textColor = [UIColor whiteColor];
     textField.returnKeyType = UIReturnKeyDone;
     textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-
-
+    
+    
     if (indexPath.row == 0) {
         textField.tag = 1;
-        textField.text = [[CURRENT_MACHINE.densityInitial stringValue] stringByAppendingString:@"%"];
+        textField.text = [[CURRENT_MACHINE.thicknessInitial stringValue] stringByAppendingString:@"%"];
         textField.frame = CGRectMake(80, 13.5f, 220, 44);
     } else if (indexPath.row == 1) {
         textField.tag = 2;
-        textField.text = [[CURRENT_MACHINE.densityMinimum stringValue] stringByAppendingString:@"%"];
+        textField.text = [[CURRENT_MACHINE.thicknessMin stringValue] stringByAppendingString:@"%"];
         textField.frame = CGRectMake(110, 13.5f, 190, 44);
     } else if (indexPath.row == 2) {
         textField.tag = 3;
-        textField.text = [[CURRENT_MACHINE.densityMaximum stringValue] stringByAppendingString:@"%"];
+        textField.text = [[CURRENT_MACHINE.thicknessMax stringValue] stringByAppendingString:@"%"];
         textField.frame = CGRectMake(112, 13.5f, 188, 44);
     }
-
-      
+    
+    
     [cell addSubview:textField];
     [textField release];
-
+    
     return  cell;
 }
 
@@ -136,11 +136,11 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField.tag == 1) {
-        CURRENT_MACHINE.densityInitial = [NSNumber numberWithInt:[textField.text intValue]];
+        CURRENT_MACHINE.thicknessInitial = [NSNumber numberWithInt:[textField.text intValue]];
     } else if (textField.tag == 2) {
-        CURRENT_MACHINE.densityMinimum = [NSNumber numberWithInt:[textField.text intValue]]; 
+        CURRENT_MACHINE.thicknessMin = [NSNumber numberWithInt:[textField.text intValue]]; 
     } else {
-       CURRENT_MACHINE.densityMaximum = [NSNumber numberWithInt:[textField.text intValue]];
+        CURRENT_MACHINE.thicknessMax = [NSNumber numberWithInt:[textField.text intValue]];
     }
     if ([textField.text length] > 0 ) {
         textField.text = [textField.text stringByAppendingString:@"%"];
@@ -162,5 +162,6 @@
     [textField resignFirstResponder];
     return YES;
 }
+
 
 @end

@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MachineDetailControlView : UIViewController {
+@interface MachineDetailControlView : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     Machine *machineToEdit;
+    NSMutableArray *listOfItems;
+    UITableView *table;
+
 }
-@property (nonatomic,retain) Machine *machineToEdit;
+@property (nonatomic, retain) Machine *machineToEdit;
+@property (nonatomic, retain) NSMutableArray *listOfItems;
+@property (nonatomic, retain) UITableView *table;
+
 
 @end
