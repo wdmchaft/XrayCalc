@@ -169,6 +169,10 @@ static Core *instance;
         [[Core getInstance].delegate coreUpdate];
 }
 
++ (void) update {
+	[Core update:[Core calculateSettingFromMachine:CURRENT_MACHINE type:[CURRENT_MACHINE.outputType intValue]]];
+}
+
 -(id)init {
     if([super init]) {
         CGSize size = [UIScreen mainScreen].currentMode.size;
@@ -197,11 +201,36 @@ static Core *instance;
 }
 
 -(void)launchInitalization {
-    [Machine createMachine:@"Atomscope 903A" withSourceType:kMachineSourceTypeDefault defaults:YES];
-    [Machine createMachine:@"Another Machine" withSourceType:kMachineSourceTypeCustom defaults:YES];
-    [Machine setCurrentMachine:[[self getMachineArray] objectAtIndex:0]];
+	if ([[User getAll] count] == 0) {
+		User *newUser = [User createUser:YES];
+		[[Core getInstance] saveContext];
+		
+		Machine *atomscope = [Machine createMachine:@"Atomscope 903A" withSourceType:kMachineSourceTypeDefault defaults:YES];
+		Machine *custom = [Machine createMachine:@"Your Machine" withSourceType:kMachineSourceTypeCustom defaults:YES];
+		
+		[[Core getInstance] saveContext];
+		
+		[newUser addMachine:atomscope];
+		newUser.defaultMachine = atomscope;
+		[newUser addMachine:custom];
+		
+		[Machine setCurrentMachine:atomscope];
+		
+		[self saveContext];
+	}
+	
+	if (!CURRENT_MACHINE) {
+		[Machine setCurrentMachine:CURRENT_USER.defaultMachine];
+	}
+		
+	if ([[CURRENT_MACHINE getGridsArray] count] > 0) {
+		[Grid setCurrentGrid:[[CURRENT_MACHINE getGridsArray] objectAtIndex:0]];
+	}
+	if ([[CURRENT_MACHINE getPlatesArray] count] > 0) {
+		[Plate setCurrentPlate:[[CURRENT_MACHINE getPlatesArray] objectAtIndex:0]];
+	}
     
-    [Core update:[Core calculateSettingFromMachine:CURRENT_MACHINE type:[CURRENT_MACHINE.outputType intValue]]];
+    [Core update];
 }
 
 +(UIImage *)rotateImage:(UIImage*)image by:(CGFloat)radians degrees:(BOOL)isDegrees {
@@ -223,7 +252,7 @@ static Core *instance;
     // Move the origin to the middle of the image so we will rotate and scale around the center.
     CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
     
-    //   // Rotate the image context
+    // Rotate the image context
     CGContextRotateCTM(bitmap, radians);
     
     // Now, draw the rotated/scaled image into the context
@@ -325,20 +354,6 @@ static Core *instance;
     }    
     
     return __persistentStoreCoordinator;
-}
-
-- (NSArray*)getMachineArray {
-    NSManagedObjectContext *context = self.managedObjectContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Machine" inManagedObjectContext:context]];
-    [request setIncludesSubentities:NO];
-    
-    NSError *error = nil;
-    NSArray *objects = [context executeFetchRequest:request error: &error];
-    
-    [request release];
-    
-    return objects;
 }
 
 #pragma mark - Application's Documents directory

@@ -60,7 +60,7 @@ static Machine *currentMachine;
     }
 }
 
-+ (void)createMachine:(NSString*)name withSourceType:(kMachineSourceType)sourceType defaults:(BOOL)shouldDefault {
++ (Machine *)createMachine:(NSString*)name withSourceType:(kMachineSourceType)sourceType defaults:(BOOL)shouldDefault {
 	Machine *machine = (Machine *)[NSEntityDescription insertNewObjectForEntityForName:@"Machine" inManagedObjectContext:[Core getInstance].managedObjectContext];
 	machine.name = name;
     machine.sourceType = [NSNumber numberWithInteger:sourceType];
@@ -71,8 +71,8 @@ static Machine *currentMachine;
         machine.thicknessMax = [NSNumber numberWithInt:40];
         machine.thicknessInitial = [NSNumber numberWithInt:10];
         
-        machine.densityLeftTitle = @"Bone";
-        machine.densityRightTitle = @"Lung";
+        machine.densityLeftTitle = @"Light";
+        machine.densityRightTitle = @"Dark";
         machine.densityInitial = [NSNumber numberWithFloat:0.5];
         machine.densityMinimum = [NSNumber numberWithInt:0];
         machine.densityMaximum = [NSNumber numberWithInt:100];
@@ -82,14 +82,17 @@ static Machine *currentMachine;
         machine.rightSetting = [NSNumber numberWithInt:kSettingTypeMA];
         machine.inputsLinked = [NSNumber numberWithBool:YES];
     }
-	
-	[self setCurrentMachine:machine];
-    
+	    
     if(shouldDefault)
         [machine generateDefaults];
+	
+	return machine;
 }
 
 - (void)generateDefaults {
+	[[Core getInstance] saveContext];
+	[Machine setCurrentMachine:self];
+	
     [Grid  createGrid:  @"Default" ratio:DEFAULT_GRID_SPEED       assign:YES];
     [Plate createPlate: @"Base"    speed:DEFAULT_PLATE_SIZE_SMALL assign:YES base:YES];
     [Plate createPlate: @"Large"   speed:DEFAULT_PLATE_SIZE_LARGE assign:YES base:NO ];
@@ -103,7 +106,8 @@ static Machine *currentMachine;
     for (NSNumber *num in [Core getSDefaults] ) {
         [Setting createSetting:kSettingTypeS  value:[num doubleValue] assign:YES];
     }
-    
+
+	[[Core getInstance] saveContext];
     [self loadData];
     
     [Setting setCurrentSetting:[[self getSettingsArrayOfType:kSettingTypeKV] objectAtIndex:0]];

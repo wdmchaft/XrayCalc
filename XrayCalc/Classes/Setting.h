@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-enum {
+typedef enum _kSettingType {
     kSettingTypeKV = 0,
     kSettingTypeMA = 1,
     kSettingTypeS  = 2
-};
-typedef NSUInteger kSettingType;
+} kSettingType;
 
 @class Machine;
 

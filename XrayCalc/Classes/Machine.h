@@ -10,11 +10,10 @@
 #import <CoreData/CoreData.h>
 #import "Setting.h"
 
-enum {
+typedef enum _kMachineSourceType {
     kMachineSourceTypeDefault = 0,
     kMachineSourceTypeCustom = 1
-};
-typedef NSUInteger kMachineSourceType;
+} kMachineSourceType;
 
 @class Grid, Plate;
 
@@ -59,7 +58,7 @@ typedef NSUInteger kMachineSourceType;
 
 + (Machine *)getCurrentMachine;
 + (void)     setCurrentMachine:(Machine *)machine;
-+ (void)     createMachine:(NSString*)name withSourceType:(kMachineSourceType)sourceType defaults:(BOOL)shouldDefault;
++ (Machine *)createMachine:(NSString*)name withSourceType:(kMachineSourceType)sourceType defaults:(BOOL)shouldDefault;
 
 - (void)     generateDefaults;
 

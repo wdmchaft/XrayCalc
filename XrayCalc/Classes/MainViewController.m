@@ -7,14 +7,13 @@
 //
 
 #pragma mark - Animation/UI
-// TODO: Set timer on updates to once every 0.1s or something
 // TODO: Tutorial/helper overlay or image sequence on load and in information screen
 // TODO: Add labels to everything
 // TODO: Add different thickness measurements (inches, meters, yards, kilometres etc)
+// TODO: Link up Settings
+// TODO: Deblurrify things
 
 #pragma mark - Logic
-// TODO: Rotate the origin point of the dials
-// TODO: Fix the segmenting of the dials
 
 #import "MainViewController.h"
 #import "InformationViewController.h"
@@ -27,37 +26,112 @@
 @synthesize outputLabel;
 @synthesize outputMeasurementLabel;
 
+@synthesize coreTimer;
+
+@synthesize gridPicker;
+@synthesize platePicker;
+
 @synthesize densitySlider;
 @synthesize thicknessSlider;
 
 @synthesize leftDial;
 @synthesize rightDial;
 
-- (void)dealloc {        
+- (void)dealloc {   
     [outputLabel release];
     [outputMeasurementLabel release];
+	
+	[coreTimer release];
+	
+	[gridPicker release];
+	[platePicker release];
     
     [densitySlider release];
     [thicknessSlider release];
+	
+	[leftDial release];
+	[rightDial release];
 }
 
+static float count = 0.0f;
+static float target = 0.0f;
+static float increment = 0.0f;
+
 - (void)coreUpdate {
-    [NSTimer scheduledTimerWithTimeInterval:0.1f
-                                     target:self
-                                   selector:@selector(updateOutput:)
-                                   userInfo:nil
-                                    repeats:YES];
-    self.outputLabel.text = [NSString stringWithFormat:@"%0.2f",[CURRENT_SETTING_S.value floatValue]];
-    self.outputMeasurementLabel.text = [CURRENT_MACHINE getOutputTypeString];
+	float newTarget = [[Setting getCurrentSetting:[CURRENT_MACHINE.outputType intValue]].value floatValue];
+	if (count > 0.0f || newTarget != target) {
+		target = newTarget;
+		if (target < count) {
+			increment = (count-target)/5;
+		} else if (target > count) {
+			increment = (target-count)/5;
+		} else {
+			increment = 0.0f;
+		}
+	}
+	
+	if (!self.coreTimer || (self.coreTimer && !self.coreTimer.isValid)) {
+		target = newTarget;
+		count = self.outputLabel.text.floatValue;
+		if (target < count) {
+			increment = (count-target)/5;
+		} else if (target > count) {
+			increment = (target-count)/5;
+		} else {
+			increment = 0.0f;
+		}
+		if (increment != 0.0f) {
+			NSLog(@"START-----\n");
+			self.coreTimer = [NSTimer scheduledTimerWithTimeInterval:0.01f
+															  target:self
+															selector:@selector(updateOutput:)
+															userInfo:nil
+															 repeats:YES];
+		}
+	}
 }
 
 - (void)updateOutput:(NSTimer*)timer {
-    static float count = 0.0f;
-    if (count >= [CURRENT_SETTING_S.value floatValue]) {
-        //NSLog(@"%.2f",[CURRENT_SETTING_S.value floatValue]);
+	BOOL down = NO;
+		
+	if (target < count) {
+		down = YES;
+		count -= increment;
+	} else if (target > count) {
+		count += increment;
+	}
+	
+	NSString *countString = [NSString stringWithFormat:@"%.3f",count];
+	NSString *targetString = [NSString stringWithFormat:@"%.3f",target];
+	
+	NSLog(@"%.2f/%.2f",count,target);
+	NSString *newText = [NSString stringWithFormat:@"%.2f",count];
+	
+	UIFont   *outputFont = [UIFont systemFontOfSize:48.0f];
+	CGSize   newOutputSize = [newText sizeWithFont:outputFont];
+	CGSize   outputSize = [self.outputLabel.text sizeWithFont:outputFont];
+	self.outputLabel.text = newText;
+	self.outputMeasurementLabel.text = [CURRENT_MACHINE getOutputTypeString];
+	
+	if (newOutputSize.width != outputSize.width) {
+		[self updateOutputSize:newOutputSize];
+	}
+	
+    if ((!down && [countString floatValue] >= [targetString floatValue]) || (down && [countString floatValue] <= [targetString floatValue])) {
+		NSLog(@"-----STOP\n");
         [timer invalidate];
-    } else
-        self.outputLabel.text = [NSString stringWithFormat:@"%0.2f",count += 0.25f];
+		count = 0.0f;
+		increment = 0.0f;
+		target = 0.0f;
+    }
+}
+
+- (void)updateOutputSize:(CGSize)newSize {
+	self.outputLabel.frame = CGRectMake(0, 0, newSize.width, newSize.height);
+	
+	UIFont   *outputFont2 = [UIFont systemFontOfSize:24.0f];
+	CGSize   outputSize2 = [self.outputMeasurementLabel.text sizeWithFont:outputFont2];
+	self.outputMeasurementLabel.frame = CGRectMake(newSize.width+2, 51-outputSize2.height, outputSize2.width, outputSize2.height);
 }
 
 #pragma mark - View lifecycle
@@ -66,6 +140,15 @@
     [super viewDidLoad];
     
     [Core getInstance].delegate = self;
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *   Background   *
+	 *                *
+	 ******************/
     
     self.view.backgroundColor = BACKGROUND_COLOUR;
     
@@ -78,6 +161,15 @@
     backgroundTexture.alpha = 0.03;
     [self.view addSubview:backgroundTexture];
     [backgroundTexture release];
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *   Navigation   *
+	 *                *
+	 ******************/
     
     UIButton *infoButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 29.5f, 29.5f)];
     [infoButton setImage:[UIImage imageNamed:@"InformationButton.png"] forState:UIControlStateNormal];
@@ -92,6 +184,34 @@
     [settingsButton addTarget:self action:@selector(settingsPush:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:settingsButton]];
     [settingsButton release];
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *    Pickers     *
+	 *                *
+	 ******************/
+	
+	CGRect plateFrame = CGRectMake(20, 35, 125.5, 81.5);
+	self.platePicker = [[UIHorizontalPicker alloc] initWithFrame:plateFrame andType:kHorizontalPickerTypePlate];
+	[self.view addSubview:self.platePicker];
+	
+	CGRect gridFrame = CGRectMake(plateFrame.origin.x+plateFrame.size.width+30,
+								  plateFrame.origin.y, plateFrame.size.width, plateFrame.size.height);
+	self.gridPicker = [[UIHorizontalPicker alloc] initWithFrame:gridFrame andType:kHorizontalPickerTypeGrid];
+	[self.view addSubview:self.gridPicker];
+	
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *    Sliders     *
+	 *                *
+	 ******************/
     
     CGRect posFrame = CGRectMake(40, 95, 240, 50);
     self.densitySlider = [[UICandySlider alloc] initWithFrame:posFrame
@@ -108,6 +228,15 @@
     self.thicknessSlider.maximumValue = [CURRENT_MACHINE.thicknessMax intValue];
     self.thicknessSlider.value = [CURRENT_MACHINE.thicknessInitial intValue];
     [self.view addSubview:self.thicknessSlider];
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *     Dials      *
+	 *                *
+	 ******************/
     
     CGRect leftDialFrame = CGRectMake(posFrame2.origin.x-20, posFrame2.origin.y+posFrame2.size.height+16, 0, 0);
     self.leftDial = [[UIRadialSlider alloc] initWithFrame:leftDialFrame 
@@ -118,6 +247,15 @@
     self.rightDial = [[UIRadialSlider alloc] initWithFrame:rightDialFrame 
                                                      type:[CURRENT_MACHINE.rightSetting intValue]];
     [self.view addSubview:self.rightDial];
+	
+	
+	
+	
+	/******************
+	 *                *
+	 *     Output     *
+	 *                *
+	 ******************/
     
     UIView *outputView = [[UIView alloc] initWithFrame:CGRectMake(0, 345, 320, 60)];
     
@@ -132,6 +270,7 @@
         [self.outputLabel setBackgroundColor:[UIColor clearColor]];
         [self.outputLabel setFont:outputFont];
         self.outputLabel.text = outputText;
+		self.outputLabel.adjustsFontSizeToFitWidth = YES;
         [self.outputLabel sizeToFit];
         [outputView addSubview:self.outputLabel];
         

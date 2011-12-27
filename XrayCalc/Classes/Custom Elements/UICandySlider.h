@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-enum {
+typedef enum _kCandySliderType {
     kCandySliderTypeCustom = 0,
     kCandySliderTypeDensity = 1,
     kCandySliderTypeThickness = 2
-};
+} kCandySliderType;
 
 @class UICandySlider;
 
@@ -27,7 +27,7 @@ enum {
     NSString *suffix;
     NSInteger multipler;
     
-    NSInteger sliderType;
+    kCandySliderType sliderType;
     
     BOOL shouldAnimateDescriptions;
 }
@@ -41,11 +41,11 @@ enum {
 @property (nonatomic,retain) NSString *suffix;
 @property (nonatomic,assign) NSInteger multipler;
 
-@property (nonatomic,assign) NSInteger sliderType;
+@property (nonatomic,assign) kCandySliderType sliderType;
 
 @property (nonatomic,assign) BOOL shouldAnimateDescriptions;
 
--(UICandySlider*)initWithFrame:(CGRect)frame type:(NSInteger)type;
+-(UICandySlider*)initWithFrame:(CGRect)frame type:(kCandySliderType)type;
 -(void)changed:(float)value;
 
 @end

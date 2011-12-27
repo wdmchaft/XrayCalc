@@ -73,6 +73,8 @@
 		9084BD811481F278005442AE /* ThicknessDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084BD801481F278005442AE /* ThicknessDetailView.m */; };
 		9084BD841481F2B5005442AE /* cellBackgroundReversed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084BD821481F2B5005442AE /* cellBackgroundReversed.png */; };
 		9084BD851481F2B5005442AE /* cellButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084BD831481F2B5005442AE /* cellButtonBackground.png */; };
+		909EF797148228AA0087EAD3 /* UIHorizontalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EF796148228AA0087EAD3 /* UIHorizontalPicker.m */; };
+		909EF79A148253C40087EAD3 /* picker.png in Resources */ = {isa = PBXBuildFile; fileRef = 909EF799148253C40087EAD3 /* picker.png */; };
 		90A646D4146A958300896FC3 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646CD146A94A400896FC3 /* libRestKitCoreData.a */; };
 		90A646D5146A958300896FC3 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646C9146A94A400896FC3 /* libRestKitJSONParserJSONKit.a */; };
 		90A646D6146A958300896FC3 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646BD146A94A400896FC3 /* libRestKitNetwork.a */; };
@@ -85,6 +87,7 @@
 		90A646E1146A962700896FC3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A646E0146A962700896FC3 /* libxml2.dylib */; };
 		90A646E4146A971D00896FC3 /* CoreNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A646E3146A971D00896FC3 /* CoreNetwork.m */; };
 		90F60E27145765F4003B5992 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F60E26145765F4003B5992 /* Entitlements.plist */; };
+		90F7829A1494BEC500BB15E9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F782991494BEC400BB15E9 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +267,9 @@
 		9084BD801481F278005442AE /* ThicknessDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThicknessDetailView.m; sourceTree = "<group>"; };
 		9084BD821481F2B5005442AE /* cellBackgroundReversed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellBackgroundReversed.png; path = UITableView/cellBackgroundReversed.png; sourceTree = "<group>"; };
 		9084BD831481F2B5005442AE /* cellButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellButtonBackground.png; path = UITableView/cellButtonBackground.png; sourceTree = "<group>"; };
+		909EF795148228AA0087EAD3 /* UIHorizontalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHorizontalPicker.h; sourceTree = "<group>"; };
+		909EF796148228AA0087EAD3 /* UIHorizontalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHorizontalPicker.m; sourceTree = "<group>"; };
+		909EF799148253C40087EAD3 /* picker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picker.png; path = UIHorizontalPicker/picker.png; sourceTree = "<group>"; };
 		90A646A8146A94A400896FC3 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		90A646DA146A95A300896FC3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90A646DC146A95C000896FC3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -272,6 +278,8 @@
 		90A646E2146A971D00896FC3 /* CoreNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreNetwork.h; sourceTree = "<group>"; };
 		90A646E3146A971D00896FC3 /* CoreNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreNetwork.m; sourceTree = "<group>"; };
 		90F60E26145765F4003B5992 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		90F782981494BEC400BB15E9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		90F782991494BEC400BB15E9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +391,8 @@
 		6F25D2B814221CF000D938E9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				90F782981494BEC400BB15E9 /* User.h */,
+				90F782991494BEC400BB15E9 /* User.m */,
 				6F9AAD10142832F8006FC670 /* Machine.h */,
 				6F9AAD11142832F8006FC670 /* Machine.m */,
 				6F9AAD0D1428322B006FC670 /* Setting.h */,
@@ -547,6 +557,7 @@
 				6F53548B1424C8220079CB86 /* Navigation */,
 				6F8F9894142350B000D09D53 /* UICandySlider */,
 				6F76EF37142B3A1D006138DC /* UIRadialSlider */,
+				909EF794148228060087EAD3 /* UIHorizontalPicker */,
 			);
 			path = "Custom Elements";
 			sourceTree = "<group>";
@@ -566,6 +577,7 @@
 				6F8A3AD0142600DA0082C846 /* Navigation */,
 				6F8F98BA14244EDD00D09D53 /* UICandySlider */,
 				6F76EF38142B3B0C006138DC /* UIRadialSlider */,
+				909EF798148253A80087EAD3 /* UIHorizontalPicker */,
 				6F86D8FE142EEBAC005F09CA /* UITableView */,
 				6F86D8FC142EEB9F005F09CA /* UIToolbar */,
 				6F8F98C11424577100D09D53 /* StandardIcon.png */,
@@ -612,6 +624,23 @@
 				9084BD801481F278005442AE /* ThicknessDetailView.m */,
 			);
 			name = Thickness;
+			sourceTree = "<group>";
+		};
+		909EF794148228060087EAD3 /* UIHorizontalPicker */ = {
+			isa = PBXGroup;
+			children = (
+				909EF795148228AA0087EAD3 /* UIHorizontalPicker.h */,
+				909EF796148228AA0087EAD3 /* UIHorizontalPicker.m */,
+			);
+			name = UIHorizontalPicker;
+			sourceTree = "<group>";
+		};
+		909EF798148253A80087EAD3 /* UIHorizontalPicker */ = {
+			isa = PBXGroup;
+			children = (
+				909EF799148253C40087EAD3 /* picker.png */,
+			);
+			name = UIHorizontalPicker;
 			sourceTree = "<group>";
 		};
 		90A646A9146A94A400896FC3 /* Products */ = {
@@ -809,6 +838,7 @@
 				90F60E27145765F4003B5992 /* Entitlements.plist in Resources */,
 				9084BD841481F2B5005442AE /* cellBackgroundReversed.png in Resources */,
 				9084BD851481F2B5005442AE /* cellButtonBackground.png in Resources */,
+				909EF79A148253C40087EAD3 /* picker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +872,8 @@
 				6F86D92C14306FEF005F09CA /* GridListControlView.m in Sources */,
 				90A646E4146A971D00896FC3 /* CoreNetwork.m in Sources */,
 				9084BD811481F278005442AE /* ThicknessDetailView.m in Sources */,
+				909EF797148228AA0087EAD3 /* UIHorizontalPicker.m in Sources */,
+				90F7829A1494BEC500BB15E9 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,7 +919,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
@@ -906,7 +938,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -927,7 +959,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -947,7 +979,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = "XrayCalc/XrayCalc-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

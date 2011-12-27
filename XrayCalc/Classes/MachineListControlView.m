@@ -74,7 +74,7 @@
     
     
     
-    self.machineList = [[[Core getInstance] getMachineArray] mutableCopy];
+    self.machineList = [[CURRENT_USER getMachinesArray] mutableCopy];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -103,7 +103,7 @@
     value = fabsf(value);
     self.outputLabel.text = [NSString stringWithFormat:@"%.2f",[self valueOfNearestSettingWithOrder:value]];
     [Setting setCurrentSetting:[Core findClosestOrder:value inSettingArray:[CURRENT_MACHINE getSettingsArrayOfType:self.settingType]]];
-    Recalculate;
+    [Core update];
 }
 
 -(float)roundValueToSegments:(float)value {

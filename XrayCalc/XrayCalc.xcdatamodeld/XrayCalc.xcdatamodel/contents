@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="870" systemVersion="11A494a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Grid" representedClassName="Grid" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="ratio" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="machine" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="grids" inverseEntity="Machine" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ratio" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="grids" inverseEntity="Machine" syncable="YES"/>
     </entity>
     <entity name="Machine" representedClassName="Machine" syncable="YES">
         <attribute name="densityInitial" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -14,35 +14,44 @@
         <attribute name="densityValue" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="fudge" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="inputsLinked" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="leftSetting" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" attributeType="String" defaultValueString="&lt;Insert Name Here>" syncable="YES"/>
+        <attribute name="leftSetting" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="&lt;Insert Name Here>" syncable="YES"/>
         <attribute name="outputType" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="rightSetting" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="sourceType" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rightSetting" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sourceType" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="thicknessInitial" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="thicknessMax" optional="YES" attributeType="Integer 64" defaultValueString="40" syncable="YES"/>
         <attribute name="thicknessMin" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="thicknessValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="grids" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Grid" inverseName="machine" inverseEntity="Grid" syncable="YES"/>
-        <relationship name="plates" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Plate" inverseName="machine" inverseEntity="Plate" syncable="YES"/>
-        <relationship name="settings" toMany="YES" minCount="3" deletionRule="Nullify" destinationEntity="Setting" inverseName="machine" inverseEntity="Setting" syncable="YES"/>
+        <relationship name="grids" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Grid" inverseName="machine" inverseEntity="Grid" syncable="YES"/>
+        <relationship name="plates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plate" inverseName="machine" inverseEntity="Plate" syncable="YES"/>
+        <relationship name="settings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Setting" inverseName="machine" inverseEntity="Setting" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="machines" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Plate" representedClassName="Plate" syncable="YES">
-        <attribute name="isBase" attributeType="Integer 64" maxValueString="1" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="isBase" optional="YES" attributeType="Integer 64" maxValueString="1" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="machine" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="plates" inverseEntity="Machine" syncable="YES"/>
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="plates" inverseEntity="Machine" syncable="YES"/>
     </entity>
     <entity name="Setting" representedClassName="Setting" syncable="YES">
-        <attribute name="order" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="type" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="value" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="machine" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="settings" inverseEntity="Machine" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" inverseName="settings" inverseEntity="Machine" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="defaultMachine" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Machine" syncable="YES"/>
+        <relationship name="machines" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Machine" inverseName="user" inverseEntity="Machine" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Grid" positionX="-63" positionY="153" width="128" height="105"/>
-        <element name="Machine" positionX="160" positionY="192" width="128" height="345"/>
-        <element name="Plate" positionX="-63" positionY="270" width="128" height="120"/>
+        <element name="Grid" positionX="-63" positionY="153" width="128" height="90"/>
+        <element name="Machine" positionX="160" positionY="192" width="128" height="360"/>
+        <element name="Plate" positionX="-63" positionY="270" width="128" height="105"/>
         <element name="Setting" positionX="342" positionY="156" width="128" height="105"/>
+        <element name="User" positionX="358" positionY="477" width="128" height="149"/>
     </elements>
 </model>

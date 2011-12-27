@@ -39,7 +39,7 @@
     [super dealloc];
 }
 
--(UICandySlider*)initWithFrame:(CGRect)frame type:(NSInteger)type {
+-(UICandySlider*)initWithFrame:(CGRect)frame type:(kCandySliderType)type {
     self.sliderType = type;
     if(self.sliderType == kCandySliderTypeDensity) {
         self.suffix = @"%";
@@ -127,7 +127,7 @@
         default:
             break;
     }
-    Recalculate;
+    [Core update];
 }
 
 -(void)setValue:(float)value {
@@ -145,6 +145,9 @@
 }
 
 -(CGRect)thumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
+	if (self.maximumValue == 0) {
+		self.maximumValue = 1;
+	}
     float newX = ((value/self.maximumValue)*bounds.size.width);
     CGRect of = self.output.frame;
     CGRect tf = self.maxTrackView.frame;

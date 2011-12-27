@@ -77,7 +77,6 @@ static Setting *currentSSetting;
     setting.type = [NSNumber numberWithInteger:type];
     setting.value = [NSNumber numberWithDouble:value];
     if(assign) {
-        //setting.machine = CURRENT_MACHINE;
         [CURRENT_MACHINE addSetting:setting];
     }
 	

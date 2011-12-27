@@ -9,19 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "Entities.h"
 
-#define CURRENT_MACHINE [Machine getCurrentMachine]
-#define CURRENT_GRID    [Grid    getCurrentGrid]
-#define CURRENT_PLATE   [Plate   getCurrentPlate]
-#define CURRENT_SETTING_KV [Setting getCurrentSetting:kSettingTypeKV]
-#define CURRENT_SETTING_MA [Setting getCurrentSetting:kSettingTypeMA]
-#define CURRENT_SETTING_S  [Setting getCurrentSetting:kSettingTypeS]
+#define CURRENT_USER		[User	 getCurrentUser]
+#define CURRENT_MACHINE		[Machine getCurrentMachine]
+#define CURRENT_GRID		[Grid    getCurrentGrid]
+#define CURRENT_PLATE		[Plate   getCurrentPlate]
+#define CURRENT_SETTING_KV	[Setting getCurrentSetting:kSettingTypeKV]
+#define CURRENT_SETTING_MA	[Setting getCurrentSetting:kSettingTypeMA]
+#define CURRENT_SETTING_S	[Setting getCurrentSetting:kSettingTypeS]
 
-enum {
+typedef enum _kScreenType {
     kScreenIPhone = 0,
     kScreenRetina = 1,
     kScreenIPad = 2
-};
-typedef NSUInteger kScreenType;
+} kScreenType;
 
 @protocol CoreUpdates <NSObject>
 
@@ -56,14 +56,14 @@ typedef NSUInteger kScreenType;
 + (Setting *)   calculateSettingFromMachine:(Machine*)machine type:(kSettingType)type;
 
 + (void)        update:(Setting*)setting;
++ (void)		update;
 
-+(UIImage *)    rotateImage:(UIImage*)image by:(CGFloat)radians degrees:(BOOL)isDegrees;
++ (UIImage *)   rotateImage:(UIImage*)image by:(CGFloat)radians degrees:(BOOL)isDegrees;
 
 - (id)          init;
 - (void)        launchInitalization;
 
 - (void)        saveContext;
-- (NSArray*)    getMachineArray;
 - (NSURL *)     applicationDocumentsDirectory;
 
 @end
